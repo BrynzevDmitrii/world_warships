@@ -1,0 +1,110 @@
+.cart_wrapper {
+    position: relative;
+    display: flex;
+    width: 45%;
+    background: transparent;
+    padding: 15px;
+
+    &:hover {
+        box-shadow: 5px 3px 15px 1px rgba(0,0,0,.43);
+        cursor: pointer;
+
+        .title {
+            opacity: 1;
+            transition: opacity .3s ease-out;
+        }
+    }
+}
+
+
+.ship_img{
+    position: relative;
+    bottom: 30px;
+}
+
+.title{
+opacity: 0;
+z-index: 1;
+text-transform: uppercase;
+position: absolute;
+left: 8rem;
+top: 1rem;
+            
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+        
+        
+font-family: RobotoCondensed,sans-serif;
+font-size: 22px;
+ line-height: 24px;
+ color: rgb(233, 224, 224);
+
+ max-width: 240px;
+}
+
+
+
+.lvl_block{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .lvl {
+    
+
+        font-family: RobotoCondensed,sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        color: white;
+        padding: 10px;
+    }
+    
+    .flag {
+        position: absolute;
+        left: 0rem;
+        top: 0;
+        z-index: -1;
+        max-height: 271px;
+        opacity: .5;
+        
+    }
+    
+   
+    .class_ship {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 12px 0 0 0;
+      
+        text-overflow: ellipsis;
+        color: #eee;
+    }
+
+    .nation{
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 12px 0 0 0;
+       
+        text-overflow: ellipsis;
+        color: #eee;
+        text-transform: uppercase;
+    }
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    // max-height: 49px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 12px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #eee;
+}
