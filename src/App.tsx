@@ -3,7 +3,6 @@ import style from './App.module.scss'
 import { ShipsList } from './componets/shipsList/ShipList'
 import { All_SHIPS } from './apollo/ships'
 import { useState } from 'react';
-import { PaginationBtn } from './componets/pagination/PaginationBtn';
 import { Levels } from './componets/filters/level/Levels';
 import { Nations } from './componets/filters/nation/Nations';
 import { Class } from './componets/filters/class/Class';
@@ -12,7 +11,10 @@ import { Class } from './componets/filters/class/Class';
 function App() {
 
   const [countPage, setCountPage] = useState(1);
- 
+
+const pagination = (count:number):void  =>  {
+  setCountPage(count)
+}
 
   const { loading, error, data } = useQuery(All_SHIPS)
 
@@ -33,13 +35,13 @@ function App() {
           <li><Nations nations={undefined} /></li>
           <li><Class classes={undefined} /></li>
         </ul>
- 
-            <ShipsList data={data.vehicles} countPage = {countPage} />
-            <div className={style.pagination_wrapper} onClick={()=>setCountPage(countPage+1)}>
-            <PaginationBtn />
-            </div>
-
+          <div>
+          <ShipsList data={data.vehicles} setCountPage ={ pagination} countPage={countPage} />
+          </div>
+            
+              
       </div>
+     
     </>
   )
 }
