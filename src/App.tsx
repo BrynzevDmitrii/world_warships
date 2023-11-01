@@ -3,9 +3,7 @@ import style from './App.module.scss'
 import { ShipsList } from './componets/shipsList/ShipList'
 import { All_SHIPS } from './apollo/ships'
 import { useState } from 'react';
-import { Levels } from './componets/filters/level/Levels';
-import { Nations } from './componets/filters/nation/Nations';
-import { Class } from './componets/filters/class/Class';
+import { Filters } from './componets/filters/Filters';
 
 
 function App() {
@@ -23,6 +21,9 @@ const pagination = (count:number):void  =>  {
   if (error) console.log(error);
 
 
+  console.log(data);
+  
+
   return (
     <>
       <div className={style.top} />
@@ -30,11 +31,7 @@ const pagination = (count:number):void  =>  {
         <h1 className={style.title}>
           All Ships
         </h1>
-        <ul className={style.filter_wrapper}>
-          <li><Levels levels={data.vehicles} /></li>
-          <li><Nations nations={undefined} /></li>
-          <li><Class classes={undefined} /></li>
-        </ul>
+        <Filters  data={data.vehicles}/>
           <div>
           <ShipsList data={data.vehicles} setCountPage ={ pagination} countPage={countPage} />
           </div>

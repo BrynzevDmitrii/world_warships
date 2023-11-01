@@ -32,6 +32,9 @@ interface ShipsListProps {
     },[ships])
 
 
+
+
+
     const handlerPagination= ()=>{
         props.setCountPage(props.countPage+1)
         firstUpdate.current = false
