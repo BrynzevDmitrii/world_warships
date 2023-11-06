@@ -1,12 +1,19 @@
 .list_wrapper{
+    position: absolute;
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
+    background-color: rgba(25,25,28,.96);
+    box-shadow: 0 50px 56px 6px rgba(0,0,0,.72);
     
 }
 
 .title {
     display: flex;
     align-items: center;
+  
+
     height: 100%;
     font-size: 16px;
     font-family: RobotoCondensed,sans-serif;
@@ -28,4 +35,68 @@
         width: 16px;
         height: 16px;
     }
+}
+
+label {
+    display: flex;
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+.item {
+    display: flex;
+    align-items: center ;
+    height: 20px;
+    padding: 5px;
+    width: 100px;
+    transform: scale(1);
+    transition: height 0.5s, transform 0.7s ;
+}
+
+.item__hidden {
+    height: 0;
+    transform: scale(0);
+    transition: height 0.5s, transform 0.3s;
+    
+}
+.castom__checbox {
+    position: relative;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: 1px solid #434346;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: border-color .15s ease;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        display: flex;
+    
+        height: 12px;
+        width: 10px;
+
+        background-image: url('../../../assets/imges/icons8-check.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: absolute;
+        left: 50%;
+        top:50%;
+        transform: translate(-50%, -50%) scale(0);
+
+       
+    }
+}
+
+
+
+input[type=checkbox]:checked + .castom__checbox::before {
+    transform: translate(-50%, -50%) scale(1);
 }
