@@ -5,6 +5,7 @@ import { Class } from "./class/Class";
 import { Levels } from "./level/Levels";
 import { Nations } from './nation/Nations';
 import clsx from "clsx";
+import { useAppSelector } from "../../hook";
 
 interface FiltersProps {
     data: []
@@ -16,6 +17,8 @@ export const Filters: FunctionComponent<FiltersProps> = (data) => {
     const [arrayLvl, setArrayLvl] = useState([])
     const [arrayClass, setArrayClass] = useState([])
     const [arrayNations, setArrayNations] = useState([])
+
+    const isCheketInput = useAppSelector(state => state.filter.isActiveBtnFilter)
 
     useEffect(() => {
 
@@ -42,6 +45,7 @@ export const Filters: FunctionComponent<FiltersProps> = (data) => {
         <div className={style.filter_wrapper}>
             <div onClick={()=>setIsOpenList(!isOpenList)} className={style.filter_header}>
                 <button className={style.filter_btn}>Фильтр</button>
+                <button className={clsx(isCheketInput? style.apply_btn : style.apply_btn_hidden)}>Применить</button>
             </div>
         <div className={clsx(isOpenList ? style.filter_list : style.filter_list_hidden)}>
             <div className={clsx(isOpenList ?'' :style.opasity)}><Class classes={arrayClass} /></div>
