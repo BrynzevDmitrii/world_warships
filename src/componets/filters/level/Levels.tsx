@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { useAppDispatch } from '../../../hook';
 import { setFilterData, setIsActiveBtn } from '../redux/filterSlice';
 
-export const Levels = (props: unknown[]) => {
+export const Levels = (props: never[]) => {
 
     const [isOpen, setIsOpen] = useState(false)
     const dispatch =  useAppDispatch();

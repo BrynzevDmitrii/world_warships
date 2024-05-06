@@ -19,9 +19,6 @@ const pagination = (count:number):void  =>  {
   if (loading) return <p>Loading</p>
 
   if (error) console.log(error);
-
-
-  console.log(data);
   
 
   return (
